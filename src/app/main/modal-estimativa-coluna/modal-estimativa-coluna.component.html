@@ -1,0 +1,40 @@
+<div id="afazer-modal" [@btnState]='myState5'class="modal2 modal">
+  <div class="modal-content2">
+
+      <div class="modal-body2">
+          <p class="add">Das {{this.estimativaTotal}} horas alocadas nas colunas A FAZER, EM ANDAMENTO e FINALIZADO a coluna A FAZER ocupa {{this.porcentagem}}% das horas</p>
+      </div>
+
+      <div class="modal-footer2">
+          <button id="removeAlert" class="btn-close" (click)="closeModal()"></button>
+      </div>
+  </div>
+</div>
+
+
+<div id="andamento-modal" [@btnState]='myState5'class="modal2 modal">
+  <div class="modal-content2">
+
+      <div class="modal-body2">
+          <p class="add">Das {{this.estimativaTotal}} horas alocadas nas colunas A FAZER, EM ANDAMENTO e FINALIZADO a coluna EM ANDAMENTO ocupa {{this.porcentagem}}% das horas</p>
+      </div>
+
+      <div class="modal-footer2">
+          <button id="removeAlert" class="btn-close" (click)="closeModal()"></button>
+      </div>
+  </div>
+</div>
+
+
+<div id="finalizado-modal" [@btnState]='myState5'class="modal2 modal">
+  <div class="modal-content2">
+
+      <div class="modal-body2">
+          <p class="add">Das {{this.estimativaTotal}} horas alocadas nas colunas A FAZER, EM ANDAMENTO e FINALIZADO a coluna FINALIZADO ocupa {{this.porcentagem}}% das horas</p>
+      </div>
+
+      <div class="modal-footer2">
+          <button id="removeAlert" class="btn-close" (click)="closeModal()"></button>
+      </div>
+  </div>
+</div>

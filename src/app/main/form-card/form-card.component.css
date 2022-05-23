@@ -1,0 +1,16 @@
+.adicionar-cartao{
+  width: 130px;
+  height: 35px;
+  margin-top: 20px;
+  border-width: medium;
+  border-color: black;
+  background-color:rgb(152, 173, 255);
+  font-size: 11px;
+  color: black;
+}
+
+.add-cartao{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}

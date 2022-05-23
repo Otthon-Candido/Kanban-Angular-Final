@@ -1,0 +1,54 @@
+<header>
+<kb-add-name
+(addModalName)="modalAddName()"
+(addName)=" ActualizeNameVar()"
+></kb-add-name >
+
+<kb-names
+[addNameVar] ='addNameVar'
+(addName)="ActualizeNameVar()"
+(acceptAlert)="modalAcceptRemove()"
+(removeAlert)="modalRemoveAlert()"
+ ></kb-names>
+
+ <kb-user-estimativa></kb-user-estimativa>
+
+
+</header>
+
+<body>
+<kb-form-card
+(addCard)="modalAddCard()"
+[addNameVar]="this.addNameVar"
+></kb-form-card>
+
+
+<kb-built-card
+[addCard] = "addCard"
+(removeCardModal)="modalRemoveCard()"
+(editCardModal)="modalEditCard()"
+(estimativaModal)="estimativaModalColuna($event)"
+> </kb-built-card>
+</body>
+
+
+
+<kb-modal
+[removeAlert] = "removeAlert"
+[acceptRemove] = "acceptRemove"
+[addCard] = "addCard"
+[removeCard] = "removeCard"
+[addName] = 'addModalName'
+[changeCard] = 'editCard'
+>
+</kb-modal>
+
+<kb-modal-coluna
+[colunaAfazer] = 'varColunaEstimativaAfazer'
+[colunaAndamento] = 'varColunaEstimativaAndamento'
+[colunaFinalizado] = 'varColunaEstimativaFinalizado'
+>
+</kb-modal-coluna>
+
+
+

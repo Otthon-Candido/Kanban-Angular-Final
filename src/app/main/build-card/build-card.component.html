@@ -1,0 +1,425 @@
+
+  <div class="tabelas d-flex">
+    <div class="tabela-size">
+    <div id='afazer'class="col-lg-4 col-sm-12 .col-md-12" [ngClass]="{'borda':!bordatest, 'borda2':bordatest}">
+  <ul>
+    <a href=""></a>
+    <h1>A FAZER</h1>
+    <div class="header-size">
+    <div class="d-flex header">
+
+      <button  (click)="renderizarTimer()" (click)="showTimerAfazerTest()"  class="timer" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
+        <i class="fa fa-clock-o fa-2x" aria-hidden="true"></i>
+      </button>
+
+      <button  [ngClass]="{'d-none':eyeTest, 'd-block':!eyeTest}" class="info"  (click)="eye()"> <i class="fa fa-eye-slash fa-2x" aria-hidden="true"></i></button>
+
+      <button [ngClass]="{'d-none':!eyeTest, 'd-block':eyeTest}"  class="info"  (click)="eye()"> <i class="fa fa-eye fa-2x" aria-hidden="true"></i></button>
+
+      <h2 [ngClass]="{'d-none':eyeTest, 'd-block':!eyeTest}" class="porcentagem">{{this.porcentagemAfazer}}%</h2>
+
+      <button [ngClass]="{'d-none':eyeTest, 'd-block':!eyeTest}" class="info"  (click)="estimativaColuna('A FAZER')">  <i class="fa fa-info-circle fa-2x" aria-hidden="true"></i></button>
+
+    </div>
+  </div>
+    <ul  class="cartao" *ngFor="let cadsAfazer of cardsafazer" id=c{{cadsAfazer.indice}} >
+      <div class="status d-flex">
+        <div [ngClass]="{'red':cadsAfazer.prioridade=='ALTA', 'green':cadsAfazer.prioridade=='BAIXA','yellow':cadsAfazer.prioridade=='MÉDIA'}" class="botao-status">
+        </div>
+        <div class="date">
+          {{cadsAfazer.date| date : 'dd/MM/yyyy HH:mm'}}
+        </div>
+      </div>
+      <div id="accordionFlushExample1">
+        <div  [ngClass]="{'show':showTimerAfazer}" id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+          <div   ng-cloak id="color{{cadsAfazer.indice}}" class="accordion-body-timer"> {{cadsAfazer.timerDate}}</div>
+        </div>
+        </div>
+
+
+    <div class="expand">
+      <button  (click)="showcard(cadsAfazer.indice)" type="button" class="botao" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+        <i class=" fa fa-expand fa-sm" aria-hidden="true">
+      </i>
+      </button>
+
+    </div>
+
+      <h3>TITULO:</h3>
+      <p>{{cadsAfazer.titulo}}</p>
+      <h3>USUARIO:</h3>
+     <p> {{cadsAfazer.user}}</p>
+
+
+
+    <button  class="arrow-up" *ngIf="botafazer" (click)="up(cadsAfazer.indice)"  id={{cadsAfazer.indice}} > <i class="fa fa fa-arrow-up fa-sm"></i></button>
+
+  <div class="d-flex align-items-center">
+      <button class="size-botton" type="submit" (click)="remove(cadsAfazer.indice)"  id={{cadsAfazer.indice}} > <i class="fa fa-trash fa-sm"></i></button>
+
+      <button class="size-botton" type="submit" (click)="changetoandamento(cadsAfazer.indice)"   >
+      <i class="fa fa fa-arrow-right fa-sm" aria-hidden="true"></i></button>
+    </div>
+
+    <button class="size-botton" *ngIf="botafazer" type="submit" (click)="down(cadsAfazer.indice)"  id={{cadsAfazer.indice}} > <i class="fa fa fa-arrow-down fa-sm"></i></button>
+
+    </ul>
+  </ul>
+  </div>
+
+  <div id='andamento' class="col-lg-4 col-sm-12 .col-md-12"  [ngClass]="{'borda':!bordatest, 'borda2':bordatest}">
+
+  <ul >
+    <h1>ANDAMENTO</h1>
+    <div class="header-size">
+      <div class="d-flex header">
+
+        <button (click)="renderizarTimer()" (click)="showTimerAndamentoTest()" class="timer" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+          <i class="fa fa-clock-o fa-2x" aria-hidden="true"></i>
+        </button>
+
+      <button  [ngClass]="{'d-none':eyeTest, 'd-block':!eyeTest}" class="info"  (click)="eye()"> <i class="fa fa-eye-slash fa-2x" aria-hidden="true"></i></button>
+      <button [ngClass]="{'d-none':!eyeTest, 'd-block':eyeTest}"  class="info"  (click)="eye()"> <i class="fa fa-eye fa-2x" aria-hidden="true"></i></button>
+      <h2 [ngClass]="{'d-none':eyeTest, 'd-block':!eyeTest}" class="porcentagem">{{this.porcentagemAndamento}}%</h2>
+      <button [ngClass]="{'d-none':eyeTest, 'd-block':!eyeTest}" class="info"  (click)="estimativaColuna('EM ANDAMENTO')">  <i class="fa fa-info-circle fa-2x" aria-hidden="true"></i></button>
+    </div>
+    </div>
+    <ul class="cartao" *ngFor="let cardsAndamento of cardsandamento" id=c{{cardsAndamento.indice}}>
+      <div class="status">
+        <div  [ngClass]="{'red':cardsAndamento.prioridade=='ALTA', 'green':cardsAndamento.prioridade=='BAIXA','yellow':cardsAndamento.prioridade=='MÉDIA'}" class="botao-status">
+        </div>
+        <div class="date">
+          {{cardsAndamento.date| date : 'dd/MM/yyyy HH:mm'}}
+        </div>
+      </div>
+
+      <div id="accordionFlushExample2">
+        <div id="flush-collapseTwo" [ngClass]="{'show':showTimerAndamento}" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+          <div  id="color{{cardsAndamento.indice}}" class="accordion-body-timer"> {{cardsAndamento.timerDate}}</div>
+        </div>
+        </div>
+      <div class="expand">
+        <button (click)="showcard(cardsAndamento.indice)" type="button" class="botao" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+          <i class=" fa fa-expand fa-sm" aria-hidden="true">
+        </i>
+        </button>
+      </div>
+
+
+      <h3>TITULO:</h3>
+     <p>{{cardsAndamento.titulo}}</p>
+      <h3>USUARIO:</h3>
+      <p> {{cardsAndamento.user}}</p>
+
+
+      <button  class="arrow-up" *ngIf="botandamento" type="submit" (click)="up(cardsAndamento.indice)"  id={{cardsAndamento.indice}} > <i class="fa fa fa-arrow-up fa-sm"></i></button>
+      <div class="d-flex align-items-center ">
+        <button  class="size-botton" type="submit" (click)="changetoafazer(cardsAndamento.indice)" >
+        <i class="fa fa-arrow-left fa-sm" aria-hidden="true"></i></button>
+
+
+      <button   class="size-botton" type="submit" (click)="remove(cardsAndamento.indice)"  id={{cardsAndamento.indice}} > <i class="fa fa fa-trash fa-sm"></i></button>
+
+      <button   class="size-botton" type="submit" (click)="changetofinalizado(cardsAndamento.indice)" >
+      <i class="fa fa-arrow-right fa-sm" aria-hidden="true"></i></button>
+    </div>
+    <button  class="size-botton" *ngIf="botandamento" type="submit" (click)="down(cardsAndamento.indice)"  id={{cardsAndamento.indice}} > <i class="fa fa fa-arrow-down fa-sm"></i></button>
+
+    </ul>
+  </ul>
+</div>
+
+<div id='finalizado' class="col-lg-4 col-sm-12 .col-md-12" [ngClass]="{'borda':!bordatest, 'borda2':bordatest}">
+
+  <ul >
+    <h1>FINALIZADO</h1>
+    <div class="header-size">
+      <div class="d-flex header">
+
+        <button (click)="renderizarTimer()" (click)="showTimerFinalizadoTest()"  class="timer" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+          <i class="fa fa-clock-o fa-2x" aria-hidden="true"></i>
+        </button>
+
+      <button  [ngClass]="{'d-none':eyeTest, 'd-block':!eyeTest}" class="info"  (click)="eye()"> <i class="fa fa-eye-slash fa-2x" aria-hidden="true"></i></button>
+      <button [ngClass]="{'d-none':!eyeTest, 'd-block':eyeTest}"  class="info"  (click)="eye()"> <i class="fa fa-eye fa-2x" aria-hidden="true"></i></button>
+      <h2 [ngClass]="{'d-none':eyeTest, 'd-block':!eyeTest}" class="porcentagem">{{this.porcentagemFinalizado}}%</h2>
+      <button [ngClass]="{'d-none':eyeTest, 'd-block':!eyeTest}" class="info"  (click)="estimativaColuna('FINALIZADO')">  <i class="fa fa-info-circle fa-2x" aria-hidden="true"></i></button>
+    </div>
+    </div>
+    <ul class="cartao" *ngFor="let cardsFinalizado of cardsfinalizado" id={{cardsFinalizado.indice}>
+      <div class="status">
+        <div  [ngClass]="{'red':cardsFinalizado.prioridade=='ALTA', 'green':cardsFinalizado.prioridade=='BAIXA','yellow':cardsFinalizado.prioridade=='MÉDIA'}"class="botao-status">
+        </div>
+        <div class="date">
+          {{cardsFinalizado.date| date : 'dd/MM/yyyy HH:mm'}}
+        </div>
+      </div>
+
+      <div id="accordionFlushExample3">
+        <div  id="flush-collapseThree" [ngClass]="{'show':showTimerFinalizado}"  class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+          <div  id="color{{cardsFinalizado.indice}}" class="accordion-body-timer"> {{cardsFinalizado.timerDate}}</div>
+        </div>
+        </div>
+      <div class="expand">
+        <button (click)="showcard(cardsFinalizado.indice)" type="button" class="botao" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+          <i class=" fa fa-expand fa-sm" aria-hidden="true">
+        </i>
+        </button>
+      </div>
+
+      <h3>TITULO:</h3>
+      <p>{{cardsFinalizado.titulo}}</p>
+      <h3>USUARIO:</h3>
+     <p> {{cardsFinalizado.user}}</p>
+
+
+
+      <button  class="arrow-up"  *ngIf="botfinalizado" type="submit" (click)="up(cardsFinalizado.indice)"  id={{cardsFinalizado.indice}} > <i class="fa fa fa-arrow-up fa-sm"></i></button>
+
+      <div class="d-flex align-items-center ">
+
+        <button  class="size-botton" type="submit" (click)="changetoandamento(cardsFinalizado.indice)" >
+         <i class="fa fa-arrow-left fa-sm" aria-hidden="true"></i>
+        </button>
+
+      <button  class="size-botton" type="submit" (click)="remove(cardsFinalizado.indice)"  id={{cardsFinalizado.indice}} > <i class="fa fa-trash fa-sm"></i></button>
+
+    </div>
+    <button  class="size-botton" *ngIf="botfinalizado" type="submit" (click)="down(cardsFinalizado.indice)"  id={{cardsFinalizado.indice}} > <i class="fa fa fa-arrow-down fa-sm"></i></button>
+    </ul>
+  </ul>
+</div>
+</div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel4">Vizualização do Cartão</h5>
+
+      </div>
+      <div class="modal-body">
+
+        <ul class="showcartao" *ngFor="let cardshow of cardshow">
+          <div class="accordion" id="accordionExample">
+
+            <div class="grid">
+              <div class="grid">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="btn btn-primary  edit"  type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    <i class="fa fa fa-pencil fa-lg" aria-hidden="true"></i>
+                  </button>
+                </h2>
+
+            </div>
+
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+
+                <form [formGroup] = "changePrioridade" (submit)="changeattribbute(cardshow.indice, 'prioridade')">
+                <div class="d-flex">
+                  <select formControlName="prioridade"
+                  class="form-control"
+                  placeholder="prioridade"
+                  autofocus>
+                    <option >BAIXA</option>
+                    <option >MÉDIA</option>
+                    <option >ALTA</option>
+
+
+                  </select>
+
+                  <button  [disabled]="changePrioridade.invalid"  class="save-botton"><i class="fa fa-floppy-o fa-lg" aria-hidden="true">
+                  </i></button>
+
+                </div>
+
+
+
+              </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="status-show">
+            <div  [ngClass]="{'red':cardshow.prioridade=='ALTA', 'green':cardshow.prioridade=='BAIXA','yellow':cardshow.prioridade=='MÉDIA'}" class="botao-status">
+            </div>
+          </div>
+
+
+
+          <div class="grid">
+            <div class="grid">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="btn btn-primary  edit"  type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  <i class="fa fa fa-pencil fa-lg" aria-hidden="true"></i>
+                </button>
+              </h2>
+
+            <h3 class="mb-1">
+              TITULO:
+            </h3>
+          </div>
+
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+
+              <form [formGroup] = "changeTitulo" (submit)="changeattribbute(cardshow.indice, 'titulo')">
+
+                <div class="d-flex">
+                <input formControlName="titulo"
+                class="form-control"
+                placeholder="titulo"
+                autofocus
+                >
+
+
+                <button  [disabled]="changeTitulo.invalid"  class="save-botton"><i class="fa fa-floppy-o fa-lg" aria-hidden="true">
+                </i></button>
+
+              </div>
+
+              <small
+              *ngIf="changeTitulo.get('titulo').errors?.required"
+              class="text-danger d-block mt-2">
+              Esse Campo é Obrigatorio!
+              </small>
+
+              <small
+              *ngIf="changeTitulo.get('titulo').errors?.minlength"
+              class="text-danger d-block mt-2"  >
+             Tamanho mínimo é 4 caracteres
+             </small>
+
+             <small
+             *ngIf="changeTitulo.get('titulo').errors?.maxlength"
+             class="text-danger d-block mt-2"  >
+            Tamanho máximo é 30 caracteres
+            </small>
+
+            </form>
+            </div>
+          </div>
+        </div>
+
+      <p>{{cardshow.titulo}}</p>
+
+
+
+
+          <div class="grid">
+            <div class="grid">
+
+              <h2 class="accordion-header" id="headingTwo">
+                <button  class="btn btn-primary  edit" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <i class="fa fa fa-pencil fa-lg" aria-hidden="false"></i>
+                </button>
+              </h2>
+
+              <h3 class="mb-1">
+                DESCRICAO:
+              </h3>
+            </div>
+
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <form [formGroup] = "changeDescricao" (submit)="changeattribbute(cardshow.indice, 'descricao')">
+
+                  <div class="d-flex">
+                  <input formControlName="descricao"
+                  class="form-control"
+                  placeholder="descricao"
+                  autofocus
+                  >
+                  <button [disabled]="changeDescricao.invalid"  class="save-botton"><i class="fa fa-floppy-o fa-lg" aria-hidden="true">
+                  </i></button>
+                </div>
+                <small
+                *ngIf="changeDescricao.get('descricao').errors?.required"
+                class="text-danger d-block mt-2">
+                Esse Campo é Obrigatorio!
+                </small>
+
+                <small
+                *ngIf="changeDescricao.get('descricao').errors?.minlength"
+                class="text-danger d-block mt-2"  >
+               Tamanho mínimo é 4 caracteres
+               </small>
+
+               <small
+               *ngIf="changeDescricao.get('descricao').errors?.maxlength"
+               class="text-danger d-block mt-2"  >
+              Tamanho máximo é 60 caracteres
+              </small>
+
+
+              </form>
+              </div>
+            </div>
+          </div>
+         <p> {{cardshow.descricao}}</p>
+
+      <div class="grid">
+            <h3 class="mb-1">
+              USUARIO:
+            </h3>
+        </div>
+        <p> {{cardshow.user}}</p>
+
+
+
+          <div class="grid">
+            <div class="grid">
+
+    <h2 class="accordion-header" id="headingFour">
+      <button  class="btn btn-primary  edit" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+        <i class="fa fa fa-pencil fa-lg" aria-hidden="false"></i>
+      </button>
+    </h2>
+              <h3 class="mb-1">
+                ESTIMATIVA:
+              </h3>
+            </div>
+
+
+    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <form [formGroup] = "changeEstimativa" (submit)="changeattribbute(cardshow.indice, 'estimativa')">
+
+          <div class="d-flex">
+          <input formControlName="estimativa"
+          class="form-control"
+          placeholder="estimativa"
+          type="number"
+          autofocus
+          >
+
+
+          <button [disabled]="changeEstimativa.invalid" class="save-botton"><i class="fa fa-floppy-o fa-lg" aria-hidden="true">
+          </i></button>
+
+        </div>
+
+      </form>
+      </div>
+    </div>
+          </div>
+          <p>{{cardshow.estimativa}}</p>
+        </div>
+          </ul>
+
+                <div class="modal-footer">
+
+                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                     </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,11 @@
+.adicionar-participantes{
+  width: 150px;
+  height: 35px;
+  margin-right: 25px;
+  border-width: medium;
+  border-color: black;
+  background-color:rgb(152, 173, 255);
+  font-size: 11px;
+  color: black;
+
+}

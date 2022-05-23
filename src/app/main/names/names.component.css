@@ -1,0 +1,53 @@
+.visualizar-name{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 25px;
+  border-width: medium;
+  padding-bottom: 10px;
+  border-color: black;
+  background-color:rgb(152, 173, 255);
+}
+
+#number-people{
+margin-top: -3px;
+}
+
+#list-integrantes{
+  list-style-type: none;
+}
+
+.grid{
+  display: grid;
+  justify-items: center;
+}
+
+.icone{
+width: 30px;
+height: 30px;
+margin-right: 10px;
+border-radius: 30px;
+border-width: thin;
+border-color: black;
+}
+
+.modal-dialog {
+  max-width: 300px;
+}
+.button-sort{
+  background-color: white;
+  border-style: unset;
+  width: 40px;
+  margin-left: 5px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  padding: 5px;
+}
+
+.modal-body{
+  height: 200px;
+  overflow-y: scroll;
+  padding-left: 0px;
+  margin-bottom: 0px;
+}

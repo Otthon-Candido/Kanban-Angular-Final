@@ -1,0 +1,42 @@
+<button  type="button" class="visualizar-name" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+
+  <h2 id="number-people">
+   {{size}}
+  </h2>
+</button>
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nomes</h5>
+        <div class="header d-flex">
+          <button id="alphaAsc"  (click)="sortAlphaAsc()" class="button-sort"><i class="fa fa-sort-alpha-asc fa-lg" aria-hidden="true"></i></button>
+          <button id="alphaDesc" (click)="sortAlphaDesc()" class="button-sort"><i class="fa fa-sort-alpha-desc fa-lg" aria-hidden="true"></i></button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <ul  id="list-integrantes">
+
+        <p  *ngIf="!verification">Não existe participantes, adicione atraves do botão "Adicionar Participantes" </p>
+
+          <li  *ngFor="let user of userNames">
+
+            <div class="d-flex">
+
+            <button class="icone" type="submit" (click)="remove(user.indice)"  id={{user.indice}} > <i class="fa fa-trash fa-sm"></i></button>
+
+            <p>{{ user.names }}</p>
+
+          </div>
+          </li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+<!-- Button trigger modal -->
+
+<button type="button" class="btn btn-primary adicionar-participantes" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Adicionar Participante
+</button>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Adicionar Nome</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup] = "loginForm" (submit)="adicionar()">
+          <div class="form-group">
+
+            <input
+                id="user"
+                formControlName="userName"
+                class="form-control"
+                placeholder="userName"
+                autofocus
+                (keyup)="debounce.next($event.target.value)"
+                >
+                <small
+                *ngIf="loginForm.get('userName').errors?.required"
+                class="text-danger d-block mt-2">
+                Esse Campo é Obrigatorio
+                </small>
+
+                <small
+                *ngIf="repeatedName"
+                class="text-danger d-block mt-2">
+                Esse Nome já existe
+                </small>
+
+                <small
+                *ngIf="loginForm.get('userName').errors?.minlength"
+                class="text-danger d-block mt-2"  >
+                Tamanho mínimo é 3 caracteres
+               </small>
+
+               <small
+               *ngIf="loginForm.get('userName').errors?.maxlength"
+               class="text-danger d-block mt-2"  >
+                Tamanho máximo é 15 caracteres
+              </small>
+
+                </div>
+
+                <div class="modal-footer">
+
+                  <button id="botao"  [disabled]="loginForm.invalid || loginForm.pending" type="submit" class="btn btn-primary"
+                  >Salvar</button>
+                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                     </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+

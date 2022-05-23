@@ -1,0 +1,142 @@
+<div class="add-cartao">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary adicionar-cartao
+  " data-bs-toggle="modal" data-bs-target="#exampleModal3">
+    Adicionar Cartão
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Adicionar Cartão</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup] = "addCartao" (submit)="addcartao()">
+            <div class="form-group">
+
+              <label for="titulo">TITULO</label>
+
+              <input formControlName='titulo'
+                  class="form-control"
+                  placeholder="titulo"
+                  autofocus
+                  >
+                  <small
+                  *ngIf="addCartao.get('titulo').errors?.required"
+                  class="text-danger d-block mt-2">
+                  Esse Campo é Obrigatorio!
+                  </small>
+
+                   <small
+                   *ngIf="addCartao.get('titulo').errors?.minlength"
+                   class="text-danger d-block mt-2"  >
+                  Tamanho mínimo é 4 caracteres
+                  </small>
+
+                  <small
+                  *ngIf="addCartao.get('titulo').errors?.maxlength"
+                  class="text-danger d-block mt-2"  >
+                 Tamanho máximo é 30 caracteres
+                 </small>
+
+                  <label for="descricao">DESCRICAO</label>
+
+                  <input formControlName="descricao"
+                  class="form-control"
+                  placeholder="descricao"
+                  autofocus
+                  >
+                  <small
+                  *ngIf="addCartao.get('descricao').errors?.required"
+                  class="text-danger d-block mt-2">
+                  Esse Campo é Obrigatorio!
+                  </small>
+
+                  <small
+                  *ngIf="addCartao.get('descricao').errors?.minlength"
+                  class="text-danger d-block mt-2"  >
+                 Tamanho mínimo é 4 caracteres
+                 </small>
+
+                 <small
+                 *ngIf="addCartao.get('descricao').errors?.maxlength"
+                 class="text-danger d-block mt-2"  >
+                Tamanho máximo é 60 caracteres
+                </small>
+
+                  <label for="user">USUARIO RESPONSÁVEL</label>
+
+                  <select formControlName="user"
+                  class="form-control"
+                  placeholder="user"
+                  autofocus>
+
+                    <option value="">Selecione</option>
+
+                    <option  *ngFor="let user of this.namesForm" >
+                    {{user}}
+                    </option>
+                    </select>
+
+                  <small
+                  *ngIf="addCartao.get('user').errors?.required"
+                  class="text-danger d-block mt-2">
+                  Esse Campo é Obrigatorio!
+                  </small>
+
+                  <label for="estimativa">ESTIMATIVA</label>
+
+                  <input formControlName="estimativa"
+                  class="form-control"
+                  placeholder="estimativa"
+                  type="number"
+                  autofocus
+                  >
+
+                  <small
+                  *ngIf="addCartao.get('estimativa').errors?.required"
+                  class="text-danger d-block mt-2">
+                  Esse Campo é Obrigatorio
+                  </small>
+
+                  <label for="coluna">COLUNA</label>
+
+                  <select formControlName="coluna"
+                  class="form-control"
+                  placeholder="coluna"
+                  autofocus>
+
+                    <option>A FAZER</option>
+                    <option>EM ANDAMENTO</option>
+                    <option>FINALIZADO</option>
+                  </select>
+
+                  <label for="prioridade">PRIORIDADE</label>
+
+                  <select formControlName="prioridade"
+                  class="form-control"
+                  placeholder="prioridade"
+                  autofocus>
+
+                    <option >ALTA</option>
+                    <option >MÉDIA</option>
+                    <option >BAIXA</option>
+                  </select>
+
+
+                  </div>
+
+                  <div class="modal-footer">
+
+                    <button [disabled]="addCartao.invalid" type="submit" class="btn btn-primary" >Salvar</button>
+                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                       </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

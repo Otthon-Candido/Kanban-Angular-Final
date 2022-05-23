@@ -1,0 +1,32 @@
+
+<button (click)="openUser()"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i></button>
+
+
+<div id="names" [@btnState]='myState6'class="modal2 modal">
+  <div class="modal-content2">
+    <div class="header d-flex">
+      <button id="numericAsc" (click)="sortNumericAsc()" class="button-sort"><i class="fa fa-sort-numeric-asc fa-lg sort" aria-hidden="true"></i></button>
+      <button id="numericDesc" (click)="sortNumericDesc()" class="button-sort"><i class="fa fa-sort-numeric-desc fa-lg sort" aria-hidden="true"></i></button>
+      <button id="alpha"  (click)="sortAlpha()" class="button-sort"><i class="fa fa-sort-alpha-asc fa-lg sort" aria-hidden="true"></i></button>
+    </div>
+<ul>
+
+  <p class="verification" *ngIf="!verification">Não existe participantes, adicione atraves do botão "Adicionar Participantes" </p>
+
+  <li *ngFor="let user of teste"class="modal-body2">
+    <p>Nome: {{this.user.nome}}</p>
+    <p>Estimativa: {{this.user.estimativa}} Horas</p>
+    <p>%: {{this.user.estimativaFinalizada}}</p>
+    <div class="line"></div>
+  </li>
+</ul>
+
+
+      <div class="modal-footer2">
+          <button id="removeAlert" class="btn-close" (click)="closeModal()"></button>
+      </div>
+    </div>
+  </div>
+
+
+
