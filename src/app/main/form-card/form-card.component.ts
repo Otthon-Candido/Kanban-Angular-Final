@@ -189,8 +189,5 @@ addcartao(){
 
 
     this.addCard.emit();
-
-
 }
-
 }

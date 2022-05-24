@@ -8,7 +8,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LocalStorageService } from '../services/local-storege.service';
 import { EstimativaService } from '../services/estimativa.service';
 import { interval } from 'rxjs';
-declare var $: any;
 
 
 @Component({
@@ -20,7 +19,7 @@ declare var $: any;
 
 export class BuildCardComponent implements OnChanges {
 
-@Output() removeCardModal = new EventEmitter<any>();
+@Output()  removeCardModal = new EventEmitter<any>();
 @Output() editCardModal = new EventEmitter<any>();
 @Output() estimativaModal = new EventEmitter<any>();
 
@@ -67,7 +66,7 @@ constructor(
   private showTimerAfazer = false;
   private showTimerAndamento = false;
   private showTimerFinalizado = false;
-  private timer
+  private timer;
 
 
 
@@ -465,5 +464,3 @@ showTimerFinalizadoTest(){
 
 }
 }
-
-

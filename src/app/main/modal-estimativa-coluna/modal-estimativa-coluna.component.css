@@ -8,8 +8,6 @@
   display: none;
 }
 
-
-
 .modal-content2 {
     margin: 0 auto;
     margin-top: 3%;
@@ -22,13 +20,9 @@
     border-width: 1px;
 }
 
-
-
 .modal-body2{
     padding: 10px;
-
 }
-
 
 .modal-footer2{
     background-color: #ccc;
@@ -54,19 +48,13 @@
 
 }
 
-
-
-
 .modal-timer{
-
   top: 0;
   left: 0;
   width: 100vw;
   height: 25vh;
   display: none;
   position: fixed;
-
-
 }
 
 

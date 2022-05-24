@@ -173,9 +173,6 @@ sortAlphaAsc(){
 
     this.localStorege.set('name',this.userNames);
 
-
-
-
 }
 }
 

@@ -9,8 +9,6 @@
 
 }
 
-
-
 .modal-content2 {
     margin: 0 auto;
     margin-top: 3%;
@@ -23,13 +21,10 @@
     border-width: 1px;
 }
 
-
-
 .modal-body2{
     padding: 10px;
 
 }
-
 
 .modal-footer2{
     background-color: #ccc;
@@ -82,9 +77,6 @@
 
 }
 
-
 .add{
-
   font-size: 15px;
-
 }

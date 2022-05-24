@@ -41,8 +41,8 @@ export class ModalEstimativaColunaComponent implements OnChanges {
   private allowModal = false;
   private cards;
   private afazerEstimativa =0;
-  private estimativaTotal
-  private porcentagem
+  private estimativaTotal;
+  private porcentagem;
   @Input() colunaAfazer:string;
   @Input() colunaAndamento:string;
   @Input() colunaFinalizado:string;
