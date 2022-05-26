@@ -202,7 +202,11 @@ h1 {
 .arrow-up {
   width: 25px;
   height: 25px;
-  margin-bottom: -4px;
+  margin-bottom: -10px;
+}
+
+.arrow-down {
+  margin-top: -4px;
 }
 
 .edit {
