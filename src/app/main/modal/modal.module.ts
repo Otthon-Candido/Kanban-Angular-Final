@@ -1,24 +1,14 @@
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ModalComponent } from './modal.component';
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-
-
-
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ModalComponent } from "./modal.component";
+import { CommonModule } from "@angular/common";
+import { NgModule } from "@angular/core";
 
 @NgModule({
-  declarations: [
-   ModalComponent
-  ],
-  imports: [
-   CommonModule, BrowserAnimationsModule
-  ],
+  declarations: [ModalComponent],
+  imports: [CommonModule, BrowserAnimationsModule],
 
-  exports: [
-    ModalComponent
-  ],
+  exports: [ModalComponent],
 
-  providers: []
-
+  providers: [],
 })
-export class ModalModule { }
+export class ModalModule {}

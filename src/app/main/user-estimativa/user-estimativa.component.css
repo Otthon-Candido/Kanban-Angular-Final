@@ -4,6 +4,17 @@ background-color: white;
 border-radius: 20px;
 }
 
+.fa-user-circle{
+  -webkit-transition:  background-color 1s;
+  background-color: white;
+
+}
+.fa-user-circle:hover
+{
+  -webkit-transition:  background-color 1s;
+  background-color:rgb(83, 107, 204);
+}
+
 button{
   border-radius: 20px;
   background-color:rgb(152, 173, 255);

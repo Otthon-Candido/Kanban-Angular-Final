@@ -8,3 +8,14 @@
   font-size: 11px;
   color: black;
 }
+
+.adicionar-participantes{
+  -webkit-transition:  background-color 1s;
+  background-color:rgb(152, 173, 255);
+
+}
+.adicionar-participantes:hover
+{
+  -webkit-transition:  background-color 1s;
+  background-color:rgb(83, 107, 204);
+}

@@ -1,4 +1,4 @@
-.visualizar-name{
+.visualizar-name {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -6,35 +6,35 @@
   border-width: medium;
   padding-bottom: 10px;
   border-color: black;
-  background-color:rgb(152, 173, 255);
+  background-color: rgb(152, 173, 255);
 }
 
-#number-people{
-margin-top: -3px;
+#number-people {
+  margin-top: -3px;
 }
 
-#list-integrantes{
+#list-integrantes {
   list-style-type: none;
 }
 
-.grid{
+.grid {
   display: grid;
   justify-items: center;
 }
 
-.icone{
-width: 30px;
-height: 30px;
-margin-right: 10px;
-border-radius: 30px;
-border-width: thin;
-border-color: black;
+.icone {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 30px;
+  border-width: thin;
+  border-color: black;
 }
 
 .modal-dialog {
   max-width: 300px;
 }
-.button-sort{
+.button-sort {
   background-color: white;
   border-style: unset;
   width: 40px;
@@ -45,9 +45,18 @@ border-color: black;
   padding: 5px;
 }
 
-.modal-body{
+.modal-body {
   height: 200px;
   overflow-y: scroll;
   padding-left: 0px;
   margin-bottom: 0px;
+}
+
+.visualizar-name {
+  -webkit-transition: background-color 1s;
+  background-color: rgb(152, 173, 255);
+}
+.visualizar-name:hover {
+  -webkit-transition: background-color 1s;
+  background-color: rgb(83, 107, 204);
 }

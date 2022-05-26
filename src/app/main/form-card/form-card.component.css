@@ -1,16 +1,25 @@
-.adicionar-cartao{
+.adicionar-cartao {
   width: 130px;
   height: 35px;
   margin-top: 20px;
   border-width: medium;
   border-color: black;
-  background-color:rgb(152, 173, 255);
+  background-color: rgb(152, 173, 255);
   font-size: 11px;
   color: black;
 }
 
-.add-cartao{
+.add-cartao {
   display: flex;
   width: 100%;
   justify-content: center;
+}
+
+.adicionar-cartao {
+  -webkit-transition: background-color 1s;
+  background-color: rgb(152, 173, 255);
+}
+.adicionar-cartao:hover {
+  -webkit-transition: background-color 1s;
+  background-color: rgb(83, 107, 204);
 }

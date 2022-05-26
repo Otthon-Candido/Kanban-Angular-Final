@@ -1,4 +1,4 @@
-export interface Names{
-  indice:number;
-  names:string[];
+export interface Names {
+  indice: number;
+  names: string[];
 }

@@ -1,21 +1,12 @@
-import { NgModule } from '@angular/core';
-import { notFoundComponent } from './not-found.component';
-
-
-
-
+import { NgModule } from "@angular/core";
+import { notFoundComponent } from "./not-found.component";
 
 @NgModule({
-  declarations: [
-  notFoundComponent
-  ],
-  imports: [
+  declarations: [notFoundComponent],
+  imports: [],
 
-  ],
+  exports: [notFoundComponent],
 
-  exports: [ notFoundComponent ],
-
-  providers: []
-
+  providers: [],
 })
-export class notFoundModule { }
+export class notFoundModule {}

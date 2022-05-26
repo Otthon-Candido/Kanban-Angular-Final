@@ -1,23 +1,14 @@
-import { ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { FormCardComponent } from './form-card.component';
-
-
+import { ReactiveFormsModule } from "@angular/forms";
+import { CommonModule } from "@angular/common";
+import { NgModule } from "@angular/core";
+import { FormCardComponent } from "./form-card.component";
 
 @NgModule({
-  declarations: [
- FormCardComponent
-  ],
-  imports: [
-   CommonModule,
-   ReactiveFormsModule
-  ],
+  declarations: [FormCardComponent],
+  imports: [CommonModule, ReactiveFormsModule],
 
-  exports: [
-   FormCardComponent ],
+  exports: [FormCardComponent],
 
-  providers: []
-
+  providers: [],
 })
-export class FormCardModule { }
+export class FormCardModule {}

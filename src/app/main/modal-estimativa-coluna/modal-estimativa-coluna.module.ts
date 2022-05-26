@@ -1,22 +1,14 @@
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ModalEstimativaColunaComponent } from './modal-estimativa-coluna.component';
-
+import { CommonModule } from "@angular/common";
+import { NgModule } from "@angular/core";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ModalEstimativaColunaComponent } from "./modal-estimativa-coluna.component";
 
 @NgModule({
-  declarations: [
-  ModalEstimativaColunaComponent
-  ],
-  imports: [
-   CommonModule
-  ],
+  declarations: [ModalEstimativaColunaComponent],
+  imports: [CommonModule],
 
-  exports: [
-    ModalEstimativaColunaComponent,  BrowserAnimationsModule
-   ],
+  exports: [ModalEstimativaColunaComponent, BrowserAnimationsModule],
 
-  providers: []
-
+  providers: [],
 })
-export class ModalEstimativaColunaModule { }
+export class ModalEstimativaColunaModule {}

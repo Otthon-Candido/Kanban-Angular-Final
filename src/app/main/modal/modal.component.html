@@ -1,76 +1,81 @@
-<div id="dv-modal" [@btnState]='myState'class="modal modal-timer">
+<div id="dv-modal" [@btnState]="myState" class="modal modal-timer">
   <div class="modal-content2">
+    <div class="modal-body2">
+      <p class="add">Cartão Adicionado com Sucesso</p>
+    </div>
 
-      <div class="modal-body2">
-          <p class="add"> Cartão Adicionado com Sucesso</p>
-      </div>
-
-      <div class="modal-footer-timer">
-          <button id="addCard" class="btn-close" (click)="closeModalAddCard()"></button>
-      </div>
+    <div class="modal-footer-timer">
+      <button
+        id="addCard"
+        class="btn-close"
+        (click)="closeModalAddCard()"
+      ></button>
+    </div>
   </div>
 </div>
 
-
-
-
-<div id="dv-modal2" [@btnState]='myState'class="modal2 modal">
+<div id="dv-modal2" [@btnState]="myState" class="modal2 modal">
   <div class="modal-content2">
+    <div class="modal-body2">
+      <p class="add">
+        O nome não pode ser removido, remova o cartão com o nome correspondente.
+      </p>
+    </div>
 
-      <div class="modal-body2">
-          <p class="add">O nome não pode ser removido, remova o cartão com o nome correspondente.</p>
-      </div>
-
-      <div class="modal-footer2">
-          <button id="removeAlert" class="btn-close" (click)="closeModalRemoveAlert()"></button>
-      </div>
+    <div class="modal-footer2">
+      <button
+        id="removeAlert"
+        class="btn-close"
+        (click)="closeModalRemoveAlert()"
+      ></button>
+    </div>
   </div>
 </div>
 
-
-
-
-
-<div id="dv-modal3" [@btnState]='myState'class="modal-timer modal">
+<div id="dv-modal3" [@btnState]="myState" class="modal-timer modal">
   <div class="modal-content2">
+    <div class="modal-body2">
+      <p class="add">Removido com Sucesso</p>
+    </div>
 
-      <div class="modal-body2">
-          <p class="add"> Removido com Sucesso</p>
-      </div>
-
-      <div class="modal-footer-timer">
-          <button id="acceptRemove" class="btn-close" (click)="closeModalAcceptRemove()"></button>
-      </div>
+    <div class="modal-footer-timer">
+      <button
+        id="acceptRemove"
+        class="btn-close"
+        (click)="closeModalAcceptRemove()"
+      ></button>
+    </div>
   </div>
 </div>
 
-
-
-
-<div id="dv-modal4" [@btnState]='myState'class="modal modal-timer">
+<div id="dv-modal4" [@btnState]="myState" class="modal modal-timer">
   <div class="modal-content2">
+    <div class="modal-body2">
+      <p class="add">Nome adicionado com sucesso</p>
+    </div>
 
-      <div class="modal-body2">
-          <p class="add"> Nome adicionado com sucesso</p>
-      </div>
-
-      <div class="modal-footer-timer">
-          <button id="addName" class="btn-close" (click)="closeModalAddName()"></button>
-      </div>
+    <div class="modal-footer-timer">
+      <button
+        id="addName"
+        class="btn-close"
+        (click)="closeModalAddName()"
+      ></button>
+    </div>
   </div>
 </div>
 
-
-
-<div id="dv-modal5" [@btnState]='myState'class="modal modal-timer">
+<div id="dv-modal5" [@btnState]="myState" class="modal modal-timer">
   <div class="modal-content2">
+    <div class="modal-body2">
+      <p class="add">Alterado com Sucesso</p>
+    </div>
 
-      <div class="modal-body2">
-          <p class="add"> Alterado com Sucesso</p>
-      </div>
-
-      <div class="modal-footer-timer">
-          <button id="addName" class="btn-close" (click)="closeModalChangeCard()"></button>
-      </div>
+    <div class="modal-footer-timer">
+      <button
+        id="addName"
+        class="btn-close"
+        (click)="closeModalChangeCard()"
+      ></button>
+    </div>
   </div>
 </div>
